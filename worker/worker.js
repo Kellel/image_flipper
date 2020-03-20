@@ -93,7 +93,7 @@ async function static(request) {
 	if (page) {
 	    return new Response(page, {
 	    	headers: {
-	    		'content-type': mime,
+				'content-type': mime,
 	    	}
 	    })
 	} else {
@@ -133,8 +133,10 @@ async function flip(request) {
 	console.log('Got request', request);
 	let resp = new Response(image, {status: 200});
 	resp.headers.set('content-type', content_type);
+	resp.headers.set('Access-Control-Allow-Origin', '*');
 
 	// Toss it in the cache so it's fast in the future
+	// TODO: add cache back lol
 
 	return resp;
 }
@@ -157,6 +159,7 @@ async function handleRequest(event) {
 
 	const resp = await r.route(event.request)
 
+	// TODO This is broken. IDK fixit at some point?
 	//event.waitUntil(cache.put(request, resp.clone()))
 	return resp
 }
