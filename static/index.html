@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<link rel='icon' href='./static/favicon.ico' type='image/x-icon'/ >
+		<link rel="stylesheet" href="/static/css/skeleton.css">
+		<link rel="stylesheet" href="/static/css/normalize.css">
+	</head>
+	<body>
+		<div class="container">
+			<h1>Image Flipper</h1>
+			<p>Use the power of the Cloudflare Edge Network to flip images at scale!</p>
+			<form action="">
+				<label for="image">Image URL</label>
+				<div class="row">
+					<div class="nine columns">
+						<input class="u-full-width" type="text" id="image" name="image"><br><br>
+					</div>
+					<div class="three columns">
+						<input class="button-primary" type="submit" value="Submit">
+					</div>
+				</div>
+			</form>
+			<div class="row">
+				<pre>
+					<code id="urlBox">
+					</code>
+				</pre>
+			</div>
+			<div class="row">
+				<canvas id="myCanvas" class="u-full-width"></canvas>
+			</div>
+		</div>
+	</body>
+	<script src="/static/js/index.js"></script>
+</html
